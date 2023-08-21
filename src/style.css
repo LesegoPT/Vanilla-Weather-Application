@@ -30,6 +30,7 @@ li {
   line-height: 19px;
   margin: 0 auto;
   padding: 0 auto;
+  text-transform: capitalize;
 }
 ul {
   padding-left: 0px;
