@@ -1,3 +1,21 @@
+let now = new Date();
+let time = document.querySelector("#time");
+
+let hours = now.getHours();
+let minutes = now.getMinutes();
+
+let days = [
+  "Sunday",
+  "Monday",
+  "Tuesday",
+  "Wednesday",
+  "Thursday",
+  "Friday",
+  "Saturday",
+];
+let day = days[now.getDay()];
+time.innerHTML = `${day} ${hours}:${minutes}`;
+
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#city");
