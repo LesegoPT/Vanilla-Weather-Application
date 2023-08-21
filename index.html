@@ -13,33 +13,40 @@
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>Johannesburg</h1>
-      <ul>
-        <li>Saturday</li>
-        <li>Partly cloudy</li>
-      </ul>
-      <div class="row">
-        <div class="col-6">
-          <div class="d-flex weather-temperature">
-            <img
-              src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
-              alt="Clear"
-              id="icon"
-            />
-            <strong id="temperature">12</strong
-            ><span class="units">°C |°F</span>
+    <div class="weather-wrapper">
+      <div class="container">
+        <h1>Johannesburg</h1>
+        <ul>
+          <li>Saturday</li>
+          <li>Partly cloudy</li>
+        </ul>
+        <div class="row">
+          <div class="col-6">
+            <div class="d-flex weather-temperature">
+              <img
+                src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
+                alt="Clear"
+                id="icon"
+              />
+              <strong id="temperature">12</strong
+              ><span class="units">°C |°F</span>
+            </div>
           </div>
-        </div>
-        <div class="col-6">
-          <ul>
-            <li>Precipitation: 0%</li>
-            <li>Humidity: 24%</li>
-            <li>Wind: 26 km/h</li>
-          </ul>
+          <div class="col-6">
+            <ul>
+              <li>Precipitation: 0%</li>
+              <li>Humidity: 24%</li>
+              <li>Wind: 26 km/h</li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
     <script src="src/index.js"></script>
+    <footer>
+      <a href="https://github.com/LesegoPT/Vanilla-Weather-Application"
+        >Open-source code</a
+      >, by Lesego Thipe
+    </footer>
   </body>
 </html>

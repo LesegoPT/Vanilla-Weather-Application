@@ -1,9 +1,12 @@
-body {
+.weather-wrapper {
   border: 1px solid #a3a3a4;
   padding: 20px;
-  margin: 30px auto;
+  margin: 0 auto;
   border-radius: 5px;
   max-width: 600px;
+}
+body {
+  margin-top: 30px;
 }
 h1 {
   color: #878787;
@@ -36,4 +39,11 @@ ul {
   font-size: 64px;
   line-height: 1;
   font-weight: 400;
+}
+footer {
+  font-size: 12px;
+  padding-left: 320px;
+}
+a {
+  text-decoration: none;
 }
