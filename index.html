@@ -16,7 +16,27 @@
   <body>
     <div class="weather-wrapper">
       <div class="container">
-        <h1 id="city">Johannesburg</h1>
+        <form id="search-form">
+          <div class="row">
+            <div class="bordered col-9">
+              <input
+                type="Search"
+                id="city-input"
+                placeholder="Type a city"
+                class="form-control"
+                autocomplete="off"
+              />
+            </div>
+            <div class="bordered col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+          </div>
+        </form>
+        <h1 id="cities">Johannesburg</h1>
         <ul>
           <li>Last Updated: <span id="time">Saturday 19:00</span></li>
           <li id="description">Partly cloudy</li>
@@ -28,6 +48,8 @@
                 src="https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png"
                 alt="Clear"
                 id="icon"
+                class="float-left"
+                width="69"
               />
               <strong id="temperature">12</strong
               ><span class="units">°C |°F</span>

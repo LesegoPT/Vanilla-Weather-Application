@@ -18,17 +18,36 @@ time.innerHTML = `${day} ${hours}:${minutes}`;
 
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
-  let cityElement = document.querySelector("#city");
+  let cityElement = document.querySelector("#cities");
   let descriptionElement = document.querySelector("#description");
   let humidityElement = document.querySelector("#humidity");
   let windElement = document.querySelector("#wind");
-  console.log(response.data);
+  let iconElement = document.querySelector("#icon");
   descriptionElement.innerHTML = response.data.weather[0].description;
   cityElement.innerHTML = response.data.name;
   temperatureElement.innerHTML = Math.round(response.data.main.temp);
   humidityElement.innerHTML = response.data.main.humidity;
   windElement.innerHTML = Math.round(response.data.wind.speed);
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
+  iconElement.setAttribute("alt", response.data.weather[0].description);
 }
-let apiKey = "c03face7caa58a9b7ffa9f52b7238a93";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Johannesburg&appid=${apiKey}&&units=metric`;
-axios.get(apiUrl).then(displayWeather);
+
+function search(city) {
+  let apiKey = "c03face7caa58a9b7ffa9f52b7238a93";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&&units=metric`;
+  axios.get(apiUrl).then(displayWeather);
+}
+
+function showCity(event) {
+  event.preventDefault();
+  let typeInput = document.querySelector("#city-input");
+  search(typeInput.value);
+}
+
+let cityType = document.querySelector("#search-form");
+cityType.addEventListener("submit", showCity);
+
+search("Pretoria");
