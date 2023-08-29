@@ -16,6 +16,33 @@ let days = [
 let day = days[now.getDay()];
 time.innerHTML = `${day} ${hours}:${minutes}`;
 
+function displayForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  let forecastHTML = `<div class="row">`;
+  let days = ["Thur", "Fri", "Sat"];
+  days.forEach(function (days) {
+    forecastHTML =
+      forecastHTML +
+      `
+            <div class="col-2">
+              <div class="weather-forecast-day">${days}</div>
+              <img
+                src="https://openweathermap.org/img/wn/02d@2x.png"
+                alt="Clear"
+                class="float-left"
+                width="39"
+              />
+              <div class="weather-forecast-temperature">
+                <span class="weather-forecast-temperature-max">22°</span>
+                <span class="weather-forecast-temperature-min">15°</span>
+              </div>
+          </div>`;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+  console.log(forecastHTML);
+}
+
 function displayWeather(response) {
   let temperatureElement = document.querySelector("#temperature");
   let cityElement = document.querySelector("#cities");
@@ -74,3 +101,4 @@ let cityType = document.querySelector("#search-form");
 cityType.addEventListener("submit", showCity);
 
 search("Pretoria");
+displayForecast();
