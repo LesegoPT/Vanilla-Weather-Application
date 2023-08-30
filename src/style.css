@@ -1,4 +1,5 @@
 .weather-wrapper {
+  background-color: #f6eec9;
   border: 1px solid #dadde1;
   padding: 15px;
   margin: 0 auto;
@@ -8,6 +9,7 @@
 }
 body {
   margin-top: 30px;
+  background-color: #fed39f;
 }
 h1 {
   color: #878787;
